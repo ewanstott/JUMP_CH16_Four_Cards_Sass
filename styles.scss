@@ -1,0 +1,140 @@
+// ADD @EXTEND
+
+// :root {
+//   --background-colour: #f2f2f2;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+// Colors:
+$themeLightColor: #f2f2f2;
+
+// Border-Tops: (CUSTOM PROPERTIES)
+$border-top-1: 5px solid #00c8c8;
+$border-top-2: 5px solid #ff637b;
+$border-top-3: 5px solid #fdbf00;
+$border-top-4: 5px solid #377fd2;
+
+// MIXIN
+
+@mixin header-formatting($size) {
+  font-size: $size;
+  text-align: center;
+}
+
+@mixin card-styling {
+  border-radius: 5px;
+  background-color: white;
+  height: 180px;
+  padding: 25px;
+  min-width: 200px;
+  max-width: 250px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@mixin image-flex-end($height) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: $height;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+// General CSS
+* {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  @include flex;
+}
+
+body {
+  background-color: $themeLightColor;
+  font-family: "Poppins", Times, serif;
+  font-size: 15px;
+  color: #4d4f62;
+}
+
+header h1,
+h2 {
+  @include header-formatting(1.5rem);
+}
+
+header h1 {
+  font-weight: lighter;
+}
+header h2 {
+  font-weight: bold;
+}
+
+header p {
+  max-width: 300px;
+  margin: auto;
+  padding-bottom: 25px;
+}
+
+p {
+  font-weight: lighter;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+// Cards
+.card {
+  @include card-styling;
+}
+
+.supervisor {
+  border-top: $border-top-1;
+}
+.team-builder {
+  border-top: $border-top-2;
+}
+
+.karma {
+  border-top: $border-top-3;
+}
+
+.calculator {
+  border-top: $border-top-4;
+}
+
+.card .image-container {
+  @include image-flex-end(120px);
+}
+
+// .card {
+//   max-width: 250px;
+// }
+
+// Media Queries
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .diamond-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 250px; */
+    /* height: 800px; */
+  }
+  .card {
+    height: 200px;
+    margin: 25px;
+  }
+  header p {
+    max-width: 500px;
+  }
+  header h1,
+  header h2 {
+    font-size: 2.5vw;
+  }
+}
