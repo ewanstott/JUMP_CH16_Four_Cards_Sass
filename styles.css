@@ -43,6 +43,17 @@ p {
   padding-top: 10px;
 }
 
+.button-cta {
+  background-color: #16c719;
+  color: white;
+  border: 1px solid #16c719;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .card {
   border-radius: 5px;
   background-color: white;
@@ -52,6 +63,9 @@ p {
   max-width: 250px;
   margin-bottom: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .supervisor {

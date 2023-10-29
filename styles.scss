@@ -8,6 +8,7 @@
 
 // Colors:
 $themeLightColor: #f2f2f2;
+$ctaColour: #16c719;
 
 // Border-Tops: (CUSTOM PROPERTIES)
 $border-top-1: 5px solid #00c8c8;
@@ -44,6 +45,23 @@ $border-top-4: 5px solid #377fd2;
   display: flex;
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
+}
+
+@mixin card-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin button-cta {
+  background-color: $ctaColour;
+  color: white;
+  border: 1px solid $ctaColour;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 // General CSS
@@ -87,9 +105,14 @@ p {
   padding-top: 10px;
 }
 
+.button-cta {
+  @include button-cta;
+}
+
 // Cards
 .card {
   @include card-styling;
+  @include card-flex;
 }
 
 .supervisor {
@@ -110,10 +133,6 @@ p {
 .card .image-container {
   @include image-flex-end(120px);
 }
-
-// .card {
-//   max-width: 250px;
-// }
 
 // Media Queries
 
